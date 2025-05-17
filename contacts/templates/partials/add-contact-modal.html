@@ -5,6 +5,7 @@
     hx-target="#contact-table-body" 
     hx-swap="afterbegin"
     hx-on:success="contact_modal.close(); this.reset();"
+    hx-on::after-request="document.getElementById('contact-table-body').firstElementChild.classList.add('bg-accent');"
     class="mb-4">
         {% csrf_token %}
         
