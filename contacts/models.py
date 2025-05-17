@@ -9,7 +9,7 @@ class User(AbstractUser):
 class Contact(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    created_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="contacts"  # user.contacts.all()
     )
